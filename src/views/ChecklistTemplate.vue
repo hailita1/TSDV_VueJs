@@ -56,8 +56,10 @@
       </tr>
       </tbody>
     </table>
-    <button type="button" class="btn btn-success">Import</button>
-    <button type="button" class="btn btn-primary">Create</button>
+    <div class="position-button">
+      <button type="button" class="btn btn-success" style="margin-right: 10px">Import</button>
+      <button type="button" class="btn btn-primary">Create</button>
+    </div>
   </div>
 </template>
 
@@ -77,5 +79,15 @@ export default {
   font-size: 40px;
   color: rgb(167, 167, 167);
   font-weight: 600;
+}
+
+.position-button {
+  position: absolute;
+  right: 150px;
+  margin-top: 100px;
+}
+
+.position-button .btn {
+  width: 120px;
 }
 </style>
