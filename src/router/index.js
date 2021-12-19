@@ -11,15 +11,15 @@ const routes = [
         children: [
             {
                 path: '',
-                component: () => import(/* webpackChunkName: "Overview" */ '../views/Checklist.vue')
+                component: () => import(/* webpackChunkName: "Checklist" */ '../views/Checklist.vue')
             },
             {
                 path: '/checklist',
-                component: () => import(/* webpackChunkName: "Messages" */ '../views/Checklist.vue')
+                component: () => import(/* webpackChunkName: "Checklist" */ '../views/Checklist.vue')
             },
             {
                 path: '/checklist_template',
-                component: () => import(/* webpackChunkName: "Profile" */ '../views/ChecklistTemplate.vue')
+                component: () => import(/* webpackChunkName: "ChecklistTemplate" */ '../views/ChecklistTemplate.vue')
             }
         ]
     }
