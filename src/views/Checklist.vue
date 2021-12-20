@@ -23,7 +23,7 @@
               <div>
                 <b-form-select
                     v-model="checklist.result"
-                    :options="checklist.results"
+                    :options="options"
                     class="mb-3"
                     value-field="id"
                     text-field="value"
@@ -67,26 +67,35 @@ export default {
       listChecklist: [],
       listResult: [],
       errors: [],
-      selected: ''
+      selected: '',
+      options: [
+        {
+          "id": 1,
+          "value": ""
+        },
+        {
+          "id": 2,
+          "value": "OK",
+        },
+        {
+          "id": 3,
+          "value": "NG",
+        },
+        {
+          "id": 4,
+          "value": "N/A",
+        }
+      ]
     }
   },
-  // lấy dữ liệu khi component được tạo thành công
   created() {
     this.getAllChecklist();
-    axios.get(`http://localhost:9000/api/result`)
-        .then(response => {
-          this.listResult = response.data;
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
   },
   methods: {
     handleChange($event, checklist) {
       checklist.result = $event;
     },
     update(checklist) {
-      console.log(checklist);
       axios.put(`http://localhost:9000/api/checklist`, checklist)
           .then(response => {
             if (response) {
